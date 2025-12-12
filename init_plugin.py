@@ -39,7 +39,7 @@ name = "{name}"
 version = "0.1.0"
 description = "A Datasette plugin"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = {{text = "Apache-2.0"}}
 authors = [
     {{name = "Your Name", email = "you@example.com"}}
@@ -47,15 +47,14 @@ authors = [
 dependencies = [
     "datasette"
 ]
-
-[project.entry-points.datasette]
-{module_name.replace("datasette_", "")} = "{module_name}"
-
-[project.optional-dependencies]
-test = [
+[dependency-groups]
+dev = [
     "pytest",
     "pytest-asyncio"
 ]
+
+[project.entry-points.datasette]
+{module_name.replace("datasette_", "")} = "{module_name}"
 
 [build-system]
 requires = ["setuptools>=61.0"]

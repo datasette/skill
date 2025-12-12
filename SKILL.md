@@ -45,14 +45,16 @@ datasette-my-plugin/
 name = "datasette-my-plugin"
 version = "0.1.0"
 description = "My Datasette plugin"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = ["datasette"]
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio"
+]
 
 [project.entry-points.datasette]
 my_plugin = "datasette_my_plugin"
-
-[project.optional-dependencies]
-test = ["pytest", "pytest-asyncio"]
 
 [build-system]
 requires = ["setuptools>=61.0"]
